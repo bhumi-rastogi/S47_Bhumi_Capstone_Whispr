@@ -1,7 +1,7 @@
 # S47_Bhumi_Capstone_Whispr
 Capstone Idea:  Whispr
 
-I am Bhumi Rastogi from Squad 47 (JECRC University). In this document, I will present my capstone idea, Chat App. 
+I am Bhumi Rastogi from Squad 47 (JECRC University). In this document, I will present my capstone idea, Chat App. I will be using the MERN stack for this project.
 
 
 Idea Brief:
