@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import { Container, Paper, Typography, TextField, Button } from "@mui/material";
+import { Avatar,Container, Paper, Typography, TextField, Button, IconButton,Stack } from "@mui/material";
+import {CameraAlt as CameraAltIcon} from '@mui/icons-material'
+import {VisuallyHiddenInput} from '../components/styles/StyledComponents';
+import {useInputValidation} from '6pp'
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const toggleLogin = () => setIsLogin((prev)=> !prev);
+
+const name = useInputValidation("");
+const bio = useInputValidation("");
+const username = useInputValidation("");
+const password = useInputValidation("")
+
   return (
     <Container
       component={"main"}
@@ -44,7 +53,7 @@ const Login = () => {
               <TextField
                 required
                 fullWidth
-                label="Passsword"
+                label="Password"
                 type="password"
                 margin="normal"
                 variant="outlined"
@@ -62,7 +71,8 @@ const Login = () => {
                 Login
               </Button>
 
-              <Typography textAlign={"center"} m={"1rem"}>
+              <Typography textAlign={"center"} 
+              m={"1rem"}>
                 OR
               </Typography>
 
@@ -86,15 +96,51 @@ const Login = () => {
             <form
               style={{
                 width: "100%",
-                marginTop: "1rem",
+                marginTop: "0rem",//change
               }}
             >
+
+            <Stack 
+            position={"relative"} 
+            width={"10rem"}
+            margin={"auto"}
+            >
+
+              <Avatar sx={{
+                width: "10rem",
+                height: "10rem",
+                objectFit: "contain",
+              }}/>
+
+
+              <IconButton
+              sx={{
+                position: "absolute",
+                bottom: "0",
+                rigth:"0",
+                color: "white",
+                bgcolor: "rgba(0,0,0,0.5)",
+                ":hover":{
+                  bgcolor: "rgba(0,0,0,0.7)"
+                },
+              }}
+              component="label"
+              >
+                <>
+                <CameraAltIcon/>
+                <VisuallyHiddenInput type="file" />
+                </>
+              </IconButton>
+            </Stack>
+
               <TextField
                 required
                 fullWidth
                 label="Name"
                 margin="normal"
                 variant="outlined"
+                value={name.value}
+                onChange={name.changeHandler}
               />
               <TextField
                 required
@@ -114,7 +160,7 @@ const Login = () => {
               <TextField
                 required
                 fullWidth
-                label="Passsword"
+                label="Password"
                 type="password"
                 margin="normal"
                 variant="outlined"
