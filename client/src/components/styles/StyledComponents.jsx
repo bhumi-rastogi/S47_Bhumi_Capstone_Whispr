@@ -8,7 +8,7 @@ export const VisuallyHiddenInput = styled("input")({
   overflow: "hidden",
   padding: 0,
   position: "absolute",
-  whiteSpace: "nowwrap",
+  whiteSpace: "nowrap",
   width: 1,
 })
 
